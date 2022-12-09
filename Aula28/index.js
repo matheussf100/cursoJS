@@ -1,7 +1,7 @@
 const data = new Date('1997-10-25 00:00:00');
 const diaSemana = data.getDay();
 let diaSemanaTexto;
-switch (diaSemana) {''
+switch (diaSemana) {
    case 0:
       diaSemanaTexto = 'Domingo';
       break;
