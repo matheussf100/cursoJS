@@ -1,3 +1,9 @@
+/* const h1 = document.querySelector('.container h1');
+
+function zeroTempo(n){
+    return n >= 10 ? n : `0${n}`;
+}
+
 const data = new Date();
 
 const diaSemana = data.getDay();
@@ -6,9 +12,13 @@ const mes = data.getMonth() + 1;
 
 const ano = data.getFullYear();
 
-const hora = data.getHours();
+const hora = zeroTempo(data.getHours());
 
-const min = data.getMinutes();
+const min = zeroTempo(data.getMinutes());
+
+const dia = data.getDate();
+
+const seg = zeroTempo(data.getSeconds());
 
 let diaSemanaTexto;
 let meses;
@@ -76,4 +86,16 @@ switch (mes) {
         break;
 }
 
-console.log(`${diaSemanaTexto}, ${diaSemana} de ${meses} de ${ano} ${hora}:${min}`);
+console.log(`${diaSemanaTexto}, ${dia} de ${meses} de ${ano} ${hora}:${min}`);
+
+function relogio() {
+    return `${diaSemanaTexto}, ${dia} de ${meses} de ${ano} ${hora}:${min}:${seg}`
+}
+
+
+h1.innerHTML = relogio();
+*/
+
+const h1 = document.querySelector('.container h1');
+const data = new Date();
+h1.innerHTML = data.toLocaleString ('pt-BR', { dateStyle: 'full', timeStyle: 'short' });
